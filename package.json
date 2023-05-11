@@ -1,22 +1,38 @@
 {
   "name": "lego-bricks-zlf",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "main": "dist/lego-bricks-zlf.umd.js",
   "module": "dist/lego-bricks-zlf.esm.js",
   "types": "dist/index.d.ts",
+  "author": "zlf",
+  "license": "MIT",
+  "keywords": [
+    "Component",
+    "UI",
+    "Vue3"
+  ],
+  "homepage": "https://gitee.com/zlif/lego-bricks-zlf",
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/zlif/lego-bricks-zlf"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "npm run clean && npm run build:esm && npm run build:umd",
     "lint": "vue-cli-service lint",
     "build:esm": "rollup --config build/rollup.esm.config.js",
     "build:umd": "rollup --config build/rollup.umd.config.js",
-    "clean": "rimraf ./dist"
+    "clean": "rimraf ./dist",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "lodash-es": "^4.17.21"
   },
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "vue": "^3.0.0"
   },
