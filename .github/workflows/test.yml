@@ -1,0 +1,26 @@
+
+name: test
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'dist/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: print node version
+        run: |
+            node -v
+            npm -v
+            echo 'hello github actions'
