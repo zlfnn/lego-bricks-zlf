@@ -21,6 +21,7 @@ const install = (app: App) => {
   })
 }
 
+// 这是测试页面
 export {
   LText,
   LImage,
